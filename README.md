@@ -44,7 +44,7 @@ This project was intentionally built with a decoupled architecture to ensure sca
 * **Cloud Storage:** AWS S3 Bucket
 * **ORM:** TypeORM
 
-## ⚙️ How to Run Locally
+## How to Run Locally
 
 ### Frontend Setup
 1. Clone the repository
