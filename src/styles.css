@@ -1,1 +1,148 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #75d8ff;
+  --text-muted: #75d8ff;
+  --blue-neon: #0ea5e9;
+  --blue-hover: #0284c7;
+  --border-color: #334155;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+  background-color: var(--bg-card) !important;
+  border-bottom: 2px solid var(--blue-neon);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+.card-header {
+  background-color: var(--bg-main) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  color: var(--blue-neon) !important;
+  font-weight: bold;
+}
+
+.text-primary {
+  color: var(--blue-neon) !important;
+}
+
+.btn-primary, .btn-success {
+  background-color: var(--blue-neon) !important;
+  border-color: var(--blue-neon) !important;
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.btn-primary:hover, .btn-success:hover {
+  background-color: var(--blue-hover) !important;
+  border-color: var(--blue-hover) !important;
+}
+
+.btn-outline-light {
+  border-color: var(--blue-neon) !important;
+  color: var(--blue-neon) !important;
+}
+
+.btn-outline-light:hover {
+  background-color: var(--blue-neon) !important;
+  color: #ffffff !important;
+}
+
+.form-control {
+  background-color: var(--bg-main) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.form-control:focus {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+  border-color: var(--blue-neon) !important;
+  box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.25) !important;
+}
+
+.table {
+  --bs-table-bg: var(--bg-card);
+  --bs-table-color: var(--text-main);
+  --bs-table-border-color: var(--border-color);
+  --bs-table-hover-bg: rgba(14, 165, 233, 0.1);
+  --bs-table-hover-color: var(--text-main);
+  color: var(--text-main) !important;
+  background-color: var(--bg-card) !important;
+}
+
+.table-dark th {
+  background-color: var(--bg-main) !important;
+  color: var(--blue-neon) !important;
+  border-bottom: 2px solid var(--blue-neon) !important;
+}
+
+.table tbody tr td {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: rgba(14, 165, 233, 0.1) !important;
+  color: var(--text-main) !important;
+}
+
+.alert-info {
+  background-color: rgba(14, 165, 233, 0.1) !important;
+  border: 1px solid var(--blue-neon) !important;
+  color: var(--text-main) !important;
+}
+
+/* =========================================
+   7. TIPOGRAFIA CUSTOMIZADA
+   ========================================= */
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .card-title {
+  font-family: 'Rajdhani', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.25) !important;
+  border-color: var(--blue-neon) !important;
+}
+
+.price-badge {
+  background: linear-gradient(45deg, var(--blue-hover), var(--blue-neon));
+  color: #ffffff !important;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.4);
+  letter-spacing: 1px;
+}

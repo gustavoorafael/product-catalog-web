@@ -1,0 +1,76 @@
+<div class="container-fluid px-4 mt-4">
+  
+  <div class="alert alert-info shadow-sm mb-4" role="alert">
+    <strong>👋 Welcome to the demo mode!</strong> 
+    This is a portfolio project. Feel free to test the registration, editing, and real image upload features to AWS. Please be gentle with the data! 
+  </div>
+
+  <div class="card shadow-sm mb-5">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">{{ isEditing ? 'Edit Product' : 'Add New Product' }}</h5>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Product Name</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Ex: Playstation 5">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Price ($)</label>
+            <input type="number" class="form-control" formControlName="price" placeholder="Ex: 500">
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea class="form-control" formControlName="description" rows="2" placeholder="Ex: Is a high-performance video game console, featuring a custom SSD for nearly instant load times, 4K graphics at up to 120fps, and hardware-accelerated ray tracing."></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">
+                Product Image <span class="text-danger" *ngIf="!isEditing">*</span>
+            </label>
+            <input type="file" class="form-control" (change)="onFileSelected($event)" accept="image/*">
+            <small class="text-muted" *ngIf="isEditing">Leave empty to keep the current image.</small>
+        </div>
+
+        <button type="submit" class="btn btn-success me-2" [disabled]="productForm.invalid || (!isEditing && !selectedFile)">
+         {{ isEditing ? 'Save Changes' : 'Add Product' }}
+        </button>
+
+        <button type="button" class="btn btn-secondary" (click)="resetForm()" *ngIf="isEditing">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <h3>Registered Products</h3>
+  <div class="table-responsive">
+    <table class="table table-hover shadow-sm mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of products; track product.id) {
+          <tr>
+            <td class="fw-bold">{{ product.name }}</td>
+            <td>$ {{ product.price }}</td>
+            <td>
+              <button class="btn btn-sm btn-warning me-2" (click)="editProduct(product)">Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="deleteProduct(product.id!)">Delete</button>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4" class="text-center text-muted py-4">No products found. The AWS database is empty!</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  
+</div>
