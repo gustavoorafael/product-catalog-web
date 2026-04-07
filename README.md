@@ -9,7 +9,8 @@
 A complete Full Stack web application built to manage a product catalog. This project demonstrates modern architectural patterns, separating the frontend UI from a secure backend API, with cloud-based file storage.
 
 ## Live Demo
-* [Frontend deployed on Vercel](#) * Backend hosted on AWS EC2
+* Frontend deployed on Vercel
+* Backend hosted on AWS EC2
 * Images stored on AWS S3
 
 ## Architecture Overview
@@ -54,3 +55,5 @@ This project was intentionally built with a decoupled architecture to ensure sca
 
 ### Environment Variables (.env)
 To run this project, you will need to add your AWS and Database credentials to your backend environment file.
+
+*Back-end Project: https://github.com/gustavoorafael/product-catalog*
