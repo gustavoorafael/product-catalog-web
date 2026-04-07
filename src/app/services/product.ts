@@ -14,7 +14,7 @@ export interface Product {
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'http://98.82.131.108:3000/products'; 
+  private apiUrl = 'https://product-catalog.freedynamicdns.org/products'; 
 
   constructor(private http: HttpClient) { }
 
